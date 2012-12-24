@@ -16,15 +16,14 @@
 
 package com.example.android.bitmapfun.util;
 
-import android.annotation.SuppressLint;
+import java.io.File;
+
 import android.app.ActivityManager;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Environment;
 import android.os.StatFs;
-
-import java.io.File;
 
 /**
  * 包含了一些静态方法的工具类
@@ -56,7 +55,6 @@ public class Utils {
 	 * @param bitmap
 	 * @return size in bytes
 	 */
-	@SuppressLint("NewApi")
 	public static int getBitmapSize(Bitmap bitmap) {
 		// yexiubiao
 		/*
@@ -72,7 +70,6 @@ public class Utils {
 	 * 
 	 * @return 如果外部储存是可移动的（例如sd卡）则返回true，否则返回false
 	 */
-	@SuppressLint("NewApi")
 	public static boolean isExternalStorageRemovable() {
 		// yexiubiao
 		/*
@@ -88,7 +85,6 @@ public class Utils {
 	 * @param context
 	 * @return 外部缓存目录
 	 */
-	@SuppressLint("NewApi")
 	public static File getExternalCacheDir(Context context) {
 		if (hasExternalCacheDir()) {
 			return context.getExternalCacheDir();
@@ -106,7 +102,6 @@ public class Utils {
 	 *            需要检测的路径
 	 * @return 空间可用的字节数
 	 */
-	@SuppressLint("NewApi")
 	public static long getUsableSpace(File path) {
 		// yexiubiao
 		/*

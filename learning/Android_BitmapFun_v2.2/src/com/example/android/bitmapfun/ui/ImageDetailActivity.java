@@ -16,7 +16,6 @@
 
 package com.example.android.bitmapfun.ui;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -57,7 +56,6 @@ public class ImageDetailActivity extends FragmentActivity implements OnClickList
 	private ImageResizer mImageWorker;
 	private ViewPager mPager;
 
-	@SuppressLint("NewApi")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -201,7 +199,6 @@ public class ImageDetailActivity extends FragmentActivity implements OnClickList
 	 * Set on the ImageView in the ViewPager children fragments, to
 	 * enable/disable low profile mode when the ImageView is touched.
 	 */
-	@SuppressLint("NewApi")
 	@Override
 	public void onClick(View v) {
 		// yexiubiao
