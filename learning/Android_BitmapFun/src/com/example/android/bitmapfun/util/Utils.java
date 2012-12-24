@@ -16,15 +16,14 @@
 
 package com.example.android.bitmapfun.util;
 
-import android.annotation.SuppressLint;
+import java.io.File;
+
 import android.app.ActivityManager;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Environment;
 import android.os.StatFs;
-
-import java.io.File;
 
 /**
  * Class containing some static utility methods.
@@ -50,7 +49,6 @@ public class Utils {
      * @param bitmap
      * @return size in bytes
      */
-    @SuppressLint("NewApi")
     public static int getBitmapSize(Bitmap bitmap) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR1) {
             return bitmap.getByteCount();
@@ -65,7 +63,6 @@ public class Utils {
      * @return True if external storage is removable (like an SD card), false
      *         otherwise.
      */
-    @SuppressLint("NewApi")
     public static boolean isExternalStorageRemovable() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
             return Environment.isExternalStorageRemovable();
@@ -79,7 +76,6 @@ public class Utils {
      * @param context The context to use
      * @return The external cache dir
      */
-    @SuppressLint("NewApi")
     public static File getExternalCacheDir(Context context) {
         if (hasExternalCacheDir()) {
             return context.getExternalCacheDir();
@@ -96,7 +92,6 @@ public class Utils {
      * @param path The path to check
      * @return The space available in bytes
      */
-    @SuppressLint("NewApi")
     public static long getUsableSpace(File path) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
             return path.getUsableSpace();

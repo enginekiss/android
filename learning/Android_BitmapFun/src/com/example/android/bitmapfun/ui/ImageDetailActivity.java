@@ -16,7 +16,6 @@
 
 package com.example.android.bitmapfun.ui;
 
-import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
@@ -52,7 +51,6 @@ public class ImageDetailActivity extends FragmentActivity implements OnClickList
     private ImageResizer mImageWorker;
     private ViewPager mPager;
 
-    @SuppressLint("NewApi")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -177,7 +175,6 @@ public class ImageDetailActivity extends FragmentActivity implements OnClickList
             return ImageDetailFragment.newInstance(position);
         }
 
-        @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
             final ImageDetailFragment fragment = (ImageDetailFragment) object;
             // As the item gets destroyed we try and cancel any existing work.
@@ -190,7 +187,6 @@ public class ImageDetailActivity extends FragmentActivity implements OnClickList
      * Set on the ImageView in the ViewPager children fragments, to enable/disable low profile mode
      * when the ImageView is touched.
      */
-    @SuppressLint("NewApi")
     @Override
     public void onClick(View v) {
         final int vis = mPager.getSystemUiVisibility();
