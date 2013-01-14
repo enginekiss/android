@@ -33,11 +33,17 @@ public class ImageListActivity extends BaseActivity {
 		imageUrls = bundle.getStringArray(Extra.IMAGES);
 
 		options = new DisplayImageOptions.Builder()
+			 // 未加载完成前显示的默认图片
 			.showStubImage(R.drawable.stub_image)
+			 // URL为空时显示的默认图片
 			.showImageForEmptyUri(R.drawable.image_for_empty_url)
+			 // 加载图片时，图片被缓存到内存。
 			.cacheInMemory()
+			 // 加载图片时，图片被缓存到SD卡。
 			.cacheOnDisc()
+			 // 设置图片显示的样式，此为20像素的圆角图片
 			.displayer(new RoundedBitmapDisplayer(20))
+			 // 实例化DisplayImageOptions对象
 			.build();
 
 		ListView listView = (ListView) findViewById(android.R.id.list);
@@ -95,7 +101,7 @@ public class ImageListActivity extends BaseActivity {
 				holder = (ViewHolder) view.getTag();
 
 			holder.text.setText("Item " + position);
-
+            // 使用ImageLoader为ImageView设置图片资源
 			imageLoader.displayImage(imageUrls[position], holder.image, options);
 
 			return view;

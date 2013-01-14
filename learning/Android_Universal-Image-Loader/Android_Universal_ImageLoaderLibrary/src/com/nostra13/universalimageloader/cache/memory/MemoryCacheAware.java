@@ -12,8 +12,8 @@ public interface MemoryCacheAware<K, V> {
 	/**
 	 * Puts value into cache by key
 	 * 
-	 * @return <b>true</b> - if value was put into cache successfully, <b>false</b> - if value was <b>not</b> put into
-	 *         cache
+	 * @return <b>true</b> - if value was put into cache successfully, 
+	 * 			<b>false</b> - if value was <b>not</b> put into cache。
 	 */
 	boolean put(K key, V value);
 

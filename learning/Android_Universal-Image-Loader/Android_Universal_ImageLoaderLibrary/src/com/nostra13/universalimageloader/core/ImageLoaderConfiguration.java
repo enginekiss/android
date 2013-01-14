@@ -29,13 +29,19 @@ import com.nostra13.universalimageloader.utils.L;
  */
 public final class ImageLoaderConfiguration {
 
-	final int maxImageWidthForMemoryCache;
+	/** 内存缓存中Image的最大宽度 */
+	final int maxImageWidthForMemoryCache;   
+	/** 内存缓存中Image的最大高度 */
 	final int maxImageHeightForMemoryCache;
+	/** SD卡缓存中Image的最大宽度 */
 	final int maxImageWidthForDiscCache;
+	/** SD卡缓存中Image的最大高度 */
 	final int maxImageHeightForDiscCache;
+	/** SD卡缓存中位图的压缩格式 */
 	final CompressFormat imageCompressFormatForDiscCache;
+	/** SD卡缓存中图片的质量 */
 	final int imageQualityForDiscCache;
-
+    /** 线程池大小 */
 	final int threadPoolSize;
 	final boolean handleOutOfMemory;
 	final QueueProcessingType tasksProcessingType;

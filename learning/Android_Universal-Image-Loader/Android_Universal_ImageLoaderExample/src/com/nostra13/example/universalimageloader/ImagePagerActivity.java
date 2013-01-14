@@ -33,16 +33,24 @@ public class ImagePagerActivity extends BaseActivity {
 		int pagerPosition = bundle.getInt(Extra.IMAGE_POSITION, 0);
 
 		options = new DisplayImageOptions.Builder()
+			 // URL为空时，默认显示的图片
 			.showImageForEmptyUri(R.drawable.image_for_empty_url)
+			 // 在加载图片之前,ImageView对象被重置为null
 			.resetViewBeforeLoading()
+			 // 加载图片时，图片被缓存到SD卡。
 			.cacheOnDisc()
+			 // 设置图片的样式
 			.imageScaleType(ImageScaleType.IN_SAMPLE_INT)
+			 // 为图片解码设置配置
 			.bitmapConfig(Bitmap.Config.RGB_565)
+			 // 设置图片显示的样式，此为300像素的淡入图片。
 			.displayer(new FadeInBitmapDisplayer(300))
+			// 实例化DisplayImageOptions对象
 			.build();
 
 		ViewPager pager = (ViewPager) findViewById(R.id.pager);
 		pager.setAdapter(new ImagePagerAdapter(imageUrls));
+		// 设置ViewPager当前显示的位置
 		pager.setCurrentItem(pagerPosition);
 	}
 
@@ -75,7 +83,7 @@ public class ImagePagerActivity extends BaseActivity {
 			final View imageLayout = inflater.inflate(R.layout.item_pager_image, null);
 			final ImageView imageView = (ImageView) imageLayout.findViewById(R.id.image);
 			final ProgressBar spinner = (ProgressBar) imageLayout.findViewById(R.id.loading);
-
+			// 为ImageView设置图片资源，以及设置加载图片过程中的监听。
 			imageLoader.displayImage(images[position], imageView, options, new SimpleImageLoadingListener() {
 				@Override
 				public void onLoadingStarted() {

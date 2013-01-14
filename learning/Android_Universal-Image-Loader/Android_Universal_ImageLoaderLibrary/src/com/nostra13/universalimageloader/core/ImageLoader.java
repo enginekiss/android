@@ -364,7 +364,9 @@ public class ImageLoader {
 
 	/**
 	 * Clear memory cache.<br />
+	 * 清除内存缓存
 	 * Do nothing if {@link #init(ImageLoaderConfiguration)} method wasn't called before.
+	 * 如果ImageLoader的init(ImageLoaderConfiguration)方法之前没被调用，什么都不做。
 	 */
 	public void clearMemoryCache() {
 		if (configuration != null) {
@@ -379,7 +381,9 @@ public class ImageLoader {
 
 	/**
 	 * Clear disc cache.<br />
+	 * 清除SD卡缓存
 	 * Do nothing if {@link #init(ImageLoaderConfiguration)} method wasn't called before.
+	 * 如果ImageLoader的init(ImageLoaderConfiguration)方法之前没被调用，什么都不做。
 	 */
 	public void clearDiscCache() {
 		if (configuration != null) {
